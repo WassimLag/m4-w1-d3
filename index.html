@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Midule 4 Week 1 Assignment</title>
+    <title>Module 4 Week 1 Assignment</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     
@@ -14,10 +15,21 @@
     <div class="header">
         <h1>Fresh Food To Go</h1>
     </div>
-    <div id="vue">
-       
+
+    <div id="app">
+        <h2>Selections</h2>
+        <div class="catalog">
+            <div v-for="(product, index) in products" :key="index" class="product">
+                <img :src="product.image" :alt="product.name">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
     </div>
 
 </div>
+
+<script src="app.js"></script>
 </body>
 </html>
